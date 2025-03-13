@@ -7,11 +7,30 @@
   pointer-events: none;
 }
 
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 teams per row on large screens */
+  gap: 10px; /* Add space between teams */
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .team-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 teams per row on tablets */
+  }
+}
+
 @media (max-width: 768px) {
   .team-container {
-    flex-direction: column; /* Stack teams vertically */
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr); /* 2 teams per row on smaller screens */
   }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 team per row on small mobile screens */
+  }
+}
 
   .team-card {
     width: 100%; /* Make team cards full width */
